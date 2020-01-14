@@ -59,7 +59,8 @@ Things you may want to cover:
 |------|----|-------|
 |text|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
-
+|image|text|null: false|
 ### Association
 - belongs_to :user
 - belongs_to :group
+- belongs_to :group_users
