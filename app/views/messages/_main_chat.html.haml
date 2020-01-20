@@ -1,0 +1,26 @@
+.main-all
+  .main-header
+    .main-header-test
+      %p test
+      .main-header-test__member
+        %p Menber :name
+    .main-header__edit
+      =link_to "#" do
+        Edit 
+  .main-contents
+    .main-contents-side
+      .main-contents-side__name
+        %p kei
+      .main-contents-side__date
+        %p 2019/11/20(wed)
+    .main-contents__messages
+      おはよう!
+  .footer
+    %footer.new_message
+      .input-box
+        %input{type: "text",class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn"}
+
