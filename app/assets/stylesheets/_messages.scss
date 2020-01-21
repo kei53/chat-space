@@ -43,12 +43,12 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
 
-    &__center {
+    .group__name {
       color: white;
       padding:20px 0 0 20px ;
       font-size: 15px;
     }
-    &__messages {
+    .group__message {
       font-size: 11px;
       color: white;
       padding: 5px 0 0 20px;
