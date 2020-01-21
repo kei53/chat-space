@@ -2,11 +2,11 @@
   .side-header
     .side-items
       .side-items__name
-        %p kei
+        = current_user.name
       .side-items__icons
         =link_to "#" do
           %i.fa.fa-edit
-        =link_to "#" do
+        =link_to edit_user_path(current_user) do
           %i.fa.fa-cog
 
   .side-contents
