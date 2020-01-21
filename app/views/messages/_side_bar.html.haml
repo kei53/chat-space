@@ -4,14 +4,17 @@
       .side-items__name
         = current_user.name
       .side-items__icons
-        =link_to "#" do
+        = link_to new_group_path do
           %i.fa.fa-edit
         =link_to edit_user_path(current_user) do
           %i.fa.fa-cog
 
   .side-contents
-    .side-contents__center
-      %p techcamp
-    .side-contents__messages
-      %p まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
   
