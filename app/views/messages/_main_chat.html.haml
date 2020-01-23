@@ -1,12 +1,15 @@
 .main-all
   .main-header
     .main-header-test
-      %p test
+      = @group.name
       .main-header-test__member
-        %p Menber :name
+        Memeber :
+        - @group.users.each do |user|
+          =user.name
+
     .main-header__edit
-      =link_to "#" do
-        Edit 
+      =link_to edit_group_path(@group) do
+        Edit
   .main-contents
     .main-contents-side
       .main-contents-side__name
@@ -14,13 +17,19 @@
       .main-contents-side__date
         %p 2019/11/20(wed)
     .main-contents__messages
-      おはよう!
-  .footer
-    %footer.new_message
-      .input-box
-        %input{type: "text",class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn"}
+      
+      
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
+      
 
+
+
+.messages
+  = render @messages
