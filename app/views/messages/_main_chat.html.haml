@@ -12,12 +12,9 @@
         Edit
   .main-contents
     .main-contents-side
-      .main-contents-side__name
-        %p kei
-      .main-contents-side__date
-        %p 2019/11/20(wed)
-    .main-contents__messages
-      
+      .main-contents-side-messages
+        = render @messages
+    
       
   .form
     = form_for [@group, @message] do |f|
@@ -31,5 +28,3 @@
 
 
 
-.messages
-  = render @messages
